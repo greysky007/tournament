@@ -5,8 +5,8 @@ import ru.netology.tournament.task.Game;
 import ru.netology.tournament.task.NotRegisteredException;
 import ru.netology.tournament.task.Player;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class GameTest {
@@ -27,6 +27,7 @@ public class GameTest {
         manager.register(player5);
     }
 
+
     @Test
     public void shouldFindByName() {
 
@@ -43,6 +44,7 @@ public class GameTest {
         int actual = manager.round("Vasya", "Petya");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldRoundWhenSecondWin() {
 
@@ -50,6 +52,7 @@ public class GameTest {
         int actual = manager.round("Petya", "Olya");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldRoundWhenDraw() {
 
@@ -58,12 +61,6 @@ public class GameTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    public void shouldSetPlayer() {
-        List<Player> expected = Arrays.asList(player1, player2, player3, player4, player5);
-        ArrayList actual = manager.getItems();
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     public void shouldNotRegistered() {

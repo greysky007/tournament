@@ -1,31 +1,30 @@
 package ru.netology.tournament.task;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Game {
-    protected ArrayList<Player> playerList = new ArrayList<>();
+
+    protected HashMap<String, Player> map = new HashMap<>();
 
 
     public void register(Player player) {
-        playerList.add(player);
+        map.put(player.getName(), player);
 
     }
 
-    public ArrayList<Player> getItems() {
-
-        return playerList;
-    }
 
     public Player findByName(String name) {
+        for (String key : map.keySet()) {
+            if (key == name) {
 
+                return map.get(key);
 
-        for (Player player : getItems()) {
-            if (name == player.getName()) {
-                return player;
             }
         }
         throw new NotRegisteredException("Element with id: " + name + " not found");
     }
+
 
     public int round(String playerName1, String playerName2) {
         Player first = findByName(playerName1);
