@@ -13,10 +13,6 @@ public class Game {
 
     }
 
-    public HashMap<String, Player> getItems() {
-
-        return map;
-    }
 
     public Player findByName(String name) {
         for (String key : map.keySet()) {
@@ -28,8 +24,6 @@ public class Game {
         }
         throw new NotRegisteredException("Element with id: " + name + " not found");
     }
-
-
 
 
     public int round(String playerName1, String playerName2) {

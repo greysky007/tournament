@@ -28,7 +28,6 @@ public class GameTest {
     }
 
 
-
     @Test
     public void shouldFindByName() {
 
@@ -45,6 +44,7 @@ public class GameTest {
         int actual = manager.round("Vasya", "Petya");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldRoundWhenSecondWin() {
 
@@ -52,6 +52,7 @@ public class GameTest {
         int actual = manager.round("Petya", "Olya");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldRoundWhenDraw() {
 
@@ -59,7 +60,6 @@ public class GameTest {
         int actual = manager.round("Olya", "Nadya");
         Assertions.assertEquals(expected, actual);
     }
-
 
 
     @Test
